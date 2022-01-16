@@ -13,22 +13,16 @@ class Homepage extends Basic{
 		$this->db = $db;
 	}
 
-	public function getHomepageData(){
-        $sql1 = "SELECT zv.id_zavodu,zv.nazev_zavodu,zv.kod_zavodu,DATE_FORMAT(zv.datum_zavodu,'%e.%c.%Y') AS datum,tz.icon,zv.web FROM zavody_{$this->currentYear()} zv, typ_zavodu tz WHERE zv.datum_zavodu  > CURDATE() AND zv.typ_zavodu = tz.id_typ_zavodu ORDER BY zv.datum_zavodu ASC LIMIT 0,4";
-        $dbdata1 =  $this->db->fetchAll($sql1);
-        $rowCount = count($dbdata1);
-        if($rowCount < $this->x)
-        
+	public function getNextRaces(){
+        $sql1 = "SELECT zv.id_zavodu,zv.nazev_zavodu,zv.kod_zavodu,DATE_FORMAT(zv.datum_zavodu,'%e.%c.%Y') AS datum,tz.icon,zv.web FROM zavody_{$this->currentYear()} zv, typ_zavodu tz WHERE zv.datum_zavodu  > CURDATE() AND zv.typ_zavodu = tz.id_typ_zavodu ORDER BY zv.datum_zavodu ASC LIMIT 0,".$this->countValuesForHomepage;
+        $dbdata =  $this->db->fetchAll($sql1);
+        $rowCount = count($dbdata);
+        if($rowCount < $this->countValuesForHomepage)
         {
-           
-            echo count($dbdata1);
-            echo $this->x;
-            $sql2 = "SELECT zv.id_zavodu,zv.nazev_zavodu,zv.kod_zavodu,DATE_FORMAT(zv.datum_zavodu,'%e.%c.%Y') AS datum,tz.icon,zv.web FROM zavody_{$this->nextYear()} zv, typ_zavodu tz WHERE zv.datum_zavodu  > CURDATE() AND zv.typ_zavodu = tz.id_typ_zavodu ORDER BY zv.datum_zavodu ASC LIMIT 0,".(4-$rowCount);
+            $sql2 = "SELECT zv.id_zavodu,zv.nazev_zavodu,zv.kod_zavodu,DATE_FORMAT(zv.datum_zavodu,'%e.%c.%Y') AS datum,tz.icon,zv.web FROM zavody_{$this->nextYear()} zv, typ_zavodu tz WHERE zv.datum_zavodu  > CURDATE() AND zv.typ_zavodu = tz.id_typ_zavodu ORDER BY zv.datum_zavodu ASC LIMIT 0,".($this->countValuesForHomepage-$rowCount);
             $dbdata2 = $this->db->fetchAll($sql2);
-            echo $sql2;
-            print_r($dbdata2);
-   
+            $dbdata = array_merge($dbdata,$dbdata2);
         }
-        
+        return $dbdata;
 	}
 }

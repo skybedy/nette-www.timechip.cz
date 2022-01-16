@@ -1,5 +1,13 @@
 {* This is the welcome page, you can delete it *}
 
 {block content}
-blala
+<ul n:if="$items">
+{foreach $items as $item}
+	<li>{$item['nazev_zavodu']}</li>
+{/foreach}
+</ul>
+
+{$bla}
+
+
 

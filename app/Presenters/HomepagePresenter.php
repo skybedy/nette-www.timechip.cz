@@ -17,7 +17,10 @@ final class HomepagePresenter extends Nette\Application\UI\Presenter
 
     public function renderDefault(): void
     {
-        $this->homepage->getHomepageData();
+        $this->template->items = $this->homepage->getNextRaces();
+
+        $this->template->bla = "blaxxx";
+ 
     }
 
 }
