@@ -1,12 +1,23 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Presenters;
-
+use App\Model\Homepage;
 use Nette;
 
 
 final class HomepagePresenter extends Nette\Application\UI\Presenter
 {
+    
+    private $homepage;
+
+    public function __construct(Homepage $homepage)
+    {
+        $this->homepage = $homepage;
+    }
+
+    public function renderDefault(): void
+    {
+        $this->homepage->getHomepageData();
+    }
+
 }
