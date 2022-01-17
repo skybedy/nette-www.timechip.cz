@@ -4,13 +4,7 @@ namespace App\Model;
 
 class Basic {
 
-    public $sqlZavody;
-
-    //public function sqlShortcuts($raceYear){
-     //   $this->sqlZavody = 'zavody_'.$raceYear;
-    //}
-
-    protected $countValuesForHomepage = 4;  
+    protected $countValuesForHomepage = 4;
 
     protected function currentYear()
     {
@@ -26,7 +20,6 @@ class Basic {
     {
         return date("Y") - 1;
     }
-
 
 }
 

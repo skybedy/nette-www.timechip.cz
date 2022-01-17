@@ -3,17 +3,24 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-
-	<title>{ifset title}{include title|stripHtml} | {/ifset}Nette Web</title>
+	<meta name="keywords" content="sport timing,čipová časomíra, měření závodů">
+	<meta name="description" content="Výsledkový systém a čipová časomíra">
+	<meta name="author" content="TimeChip">
+	<meta name="Robots" content="index,follow" />
+	<link rel="stylesheet" href="css/fontello.css" media="screen" />
+	<link rel="stylesheet" href="css/bootstrap.css" media="screen" />
+	<link rel="stylesheet" href="css/bootstrap-table.min.css" media="screen" />
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:301,400,700' rel='stylesheet' type='text/css'>
 </head>
-
 <body>
-	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+<div class="wrapper">
+   {include menu}
 
 	{include content}
 
 	{block scripts}
 	<script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
 	{/block}
+</div>	
 </body>
 </html>

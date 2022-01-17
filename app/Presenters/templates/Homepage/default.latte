@@ -1,13 +1,11 @@
-{* This is the welcome page, you can delete it *}
 
 {block content}
-<ul n:if="$items">
-{foreach $items as $item}
+<ul n:if="$nextRaces">
+{foreach $nextRaces as $item}
 	<li>{$item['nazev_zavodu']}</li>
 {/foreach}
 </ul>
 
-{$bla}
 
 
 
