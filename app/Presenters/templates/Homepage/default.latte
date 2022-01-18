@@ -1,13 +1,64 @@
-{* This is the welcome page, you can delete it *}
-
 {block content}
-<ul n:if="$items">
-{foreach $items as $item}
-	<li>{$item['nazev_zavodu']}</li>
-{/foreach}
-</ul>
+    <div class="row heading">
+        <div class="col-xs-12">
+            <h2>Co se děje u nás...</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="thumbnail boxwrapper">
+                        <div class="list-group indexbox our-news">
+                            <div class="list-group-item-heading clearfix">
+                                <h4>Nejbližší akce</h4>
+                                <span class="fontello icon-calendar"></span>
+                            </div>
+                            {foreach $nextRaces as $item}
+                                <a style="height:82px" class="list-group-item" target="_blank" href="" class="clearfix">
+                                    <div class="race-type-icon-wrapper">
+                                        <img src="./img/race-type-icons/{$item['icon']}-icon.gif" />
+                                    </div>
+                                    <h3>{$item["datum"]}</h3>
+                                    <p>{$item["nazev_zavodu"]}</p>
+                                </a>
+                            {/foreach}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 visible-lg">
+                    <div class="thumbnail homepage-imagewrapper">
+                        <div class="thumbnail">
+                            <ul class="bxslider list-unstyled">
+                                <li><img src="./img/orlice-cup.jpg" /></li>
+                                <li><img src="./img/festina-24h.jpg" /></li>
+                                <li><img src="./img/valachiarun.jpg" /></li>
+                                <li><img src="./img/chuchle.jpg" /></li>
+                                <li><img src="./img/belsky-okruh.jpg" /></li>
+                                <li><img src="./img/dobroslavicky-jarni-duatlon.jpg" /></li>
+                                <li><img src="./img/perun.jpg" /></li>
+                                <li><img src="./img/odrivousuv-pohar.jpg" /></li>
+                                <li><img src="./img/machacsky-pohodar.jpg" /></li>
+                                <li><img src="./img/auto-enge-triatlon.jpg" /></li>
+                                <li><img src="./img/valachiarun-vsetin.jpg" /></li>
+                                <li><img src="./img/zelezny-prajzak.jpg" /></li>
+                                <li><img src="./img/madeja-skialp-bila.jpg" /></li>
+                                <li><img src="./img/jesenicka-70.jpg" /></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-{$bla}
 
+
+            </div>
+        </div>
+    </div>
+
+
+
+<div class="container content">
+</div>
+{/block}
 
 
