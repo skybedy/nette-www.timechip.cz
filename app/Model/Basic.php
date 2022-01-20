@@ -10,7 +10,9 @@ class Basic {
      //   $this->sqlZavody = 'zavody_'.$raceYear;
     //}
 
-    protected $countValuesForHomepage = 4;  
+    protected $countNextRaces = 4;  
+    protected $countLastResults = 4;  
+    
 
     protected function currentYear()
     {

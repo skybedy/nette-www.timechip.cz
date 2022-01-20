@@ -1,13 +1,13 @@
-<title>Výsledkový systém a čipová časomíra TimeChip </title>
+<title>Výsledkový systém a čipová časomíra TimeChip | {$title}</title>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="keywords" content="sport timing,čipová časomíra, měření závodů">
 <meta name="description" content="Výsledkový systém a čipová časomíra">
 <meta name="author" content="TimeChip">
 <meta name="Robots" content="index,follow" />
-<link rel="stylesheet" href="/css/fontello.css" media="screen" />
-<link rel="stylesheet" href="/css/bootstrap.css" media="screen" />
-<link rel="stylesheet" href="/css/bootstrap-table.min.css" media="screen" />
+<link rel="stylesheet" href="css/fontello.css" media="screen" />
+<link rel="stylesheet" href="css/bootstrap.css" media="screen" />
+<link rel="stylesheet" href="css/bootstrap-table.min.css" media="screen" />
 
 <body>
 <div class="wrapper">
@@ -15,14 +15,21 @@
 	{include menu}
 	<div class="underbar">
     	<div class="container">
-        	<h1>Test</h1>
+        	<h1>{$title}</h1>
     	</div>
 	</div>
 
 	{include content}
 
 	{block scripts}
-	<script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
+		<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap-table.min.js"></script>
+		<script type="text/javascript" src="js/jquery.twitter.autolink.min.js"></script>
+		<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+		<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="js/messages_cs.min.js"></script>
+		<script type="text/javascript" src="js/default.js"></script>
 	{/block}
 	</div>
 </body>
