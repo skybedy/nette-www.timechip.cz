@@ -1,3 +1,5 @@
 services:
 	- App\Router\RouterFactory::createRouter
 	- App\Model\Homepage
+	- App\Model\Zavody
+
